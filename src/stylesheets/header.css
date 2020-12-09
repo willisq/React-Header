@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  width: 100%;
+  overflow: hidden;
+  background-color: #143d8d;
+  padding: 5px;
+  display: inline;
+  float: right;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-left: 5px;
+  animation: spin linear 5s infinite;
+}
+
+@keyframes spin{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg)};
+}
+
+.links,
+.linksFooter {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.nav .logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav .links:hover,
+.linksFooter:hover {
+  background-color: rgb(243, 245, 235);
+  color: rgb(42, 10, 94);
+}
+
+.rightSection {
+  float: right;
+}
+
+.linksContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  overflow: hidden;
+  background-color: #143d8d;
+  padding: 5px;
+  justify-content: center;
+}
+
+.bigLogo {
+  width: 270px;
+  height: 154px;
+}
+
+.logoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.linksFooter {
+  font-size: 15px;
+}
+
+.address:nth-child(n) {
+  color: rgb(243, 245, 235);
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+}
+
+.insiemp {
+  font-size: 16px;
+  padding: 0;
+}
+
+
+/***********Topnav*************/
+
+.topNav {
+  /* display: inline-block; */
+  display: none;
+  cursor: pointer;
+  height: 50px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: rgb(250, 246, 246);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+
+/* Rotate first bar */
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+
+/* Fade out the second bar */
+
+.change .bar2 {
+  opacity: 0;
+}
+
+
+/* Rotate last bar */
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+/***********Media queries****************/
+
+@media screen and (max-width: 600px) {
+  /*header*/
+  .logo {
+    position: relative;
+    float: none;
+    left: 22%;
+  }
+  .links {
+    float: none;
+    display: none;
+    text-align: left;
+  }
+  .rightSection {
+    float: none;
+  }
+  .change {
+    display: block;
+    text-align: center;
+  }
+  /* topnav */
+  .topNav {
+    position: absolute;
+    display: inline-block;
+    top: 10px;
+    left: calc(92% - 35px);
+  }
+}
